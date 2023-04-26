@@ -1,0 +1,915 @@
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<link rel="apple-touch-icon" href="https://www.duplichecker.com/apple-touch-icon.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Plagiarism Checker</title>
+<link rel="preload" as="image" href="https://www.duplichecker.com/asets/img/dupli-checker.png">
+<link rel="preload" as="image" href="https://www.duplichecker.com/asets/img/dupli-checker.webp">
+<link rel="preload" as="font" href="https://www.duplichecker.com/fonts/glyphicons-halflings-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.duplichecker.com/fonts/poppins-semibold-webfont.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.duplichecker.com/fonts/poppins-regular-webfont.woff2" type="font/woff2" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://ajax.googleapis.com">
+<link rel="dns-prefetch" href="https://apis.google.com">
+<link rel="dns-prefetch" href="https://www.gstatic.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="preload" href="https://www.duplichecker.com/newassets1/js/bootstrap.min.js" as="script">
+<meta name="theme-color" content="#000000">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="csrf-token" content="Iks8Dnw2GDh1r2mXWagR9pOjCkxSshcjFS8Wr55a">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.duplichecker.com/">
+<meta property="og:image" content="https://www.duplichecker.com/asets/og_images/home.png">
+<meta name="twitter:image" content="https://www.duplichecker.com/asets/og_images/home.png">
+<link rel="alternate" hreflang="x-default" href="https://www.duplichecker.com/" /><link rel="alternate" hreflang="en" href="https://www.duplichecker.com/" /><link rel="alternate" hreflang="es" href="https://www.duplichecker.com/es" /><link rel="alternate" hreflang="pt" href="https://www.duplichecker.com/pt" /><link rel="alternate" hreflang="ru" href="https://www.duplichecker.com/ru" /><link rel="alternate" hreflang="de" href="https://www.duplichecker.com/de" /><link rel="alternate" hreflang="it" href="https://www.duplichecker.com/it" /><link rel="alternate" hreflang="id" href="https://www.duplichecker.com/id" /><link rel="alternate" hreflang="ar" href="https://www.duplichecker.com/ar" /><link rel="alternate" hreflang="tr" href="https://www.duplichecker.com/tr" /><link rel="alternate" hreflang="nl" href="https://www.duplichecker.com/nl" /><link rel="alternate" hreflang="vi" href="https://www.duplichecker.com/vi" /><link rel="alternate" hreflang="fr" href="https://www.duplichecker.com/fr" /><link rel="alternate" hreflang="sv" href="https://www.duplichecker.com/sv" /><link rel="alternate" hreflang="ko" href="https://www.duplichecker.com/ko" /><link rel="alternate" hreflang="ja" href="https://www.duplichecker.com/ja" /><link rel="alternate" hreflang="da" href="https://www.duplichecker.com/da" /><link rel="alternate" hreflang="ro" href="https://www.duplichecker.com/ro" /><link rel="alternate" hreflang="no" href="https://www.duplichecker.com/no" /><link rel="canonical" href="https://www.duplichecker.com/" />
+<link rel="shortcut icon" href="https://www.duplichecker.com/favicon.ico">
+<link rel="manifest" href="https://www.duplichecker.com/manifest.json">
+<link rel="stylesheet" href="https://www.duplichecker.com/css/general.css?s=1680804800">
+<link rel="stylesheet" href="https://www.duplichecker.com/css/home.css?v=2.112?v=sdf" />
+<link rel="stylesheet" href="https://www.duplichecker.com/css/grmlyad.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+
+
+
+<script src="https://www.duplichecker.com/js/tinymce.min.js?v=mohsin"></script>
+<script>
+tinymce.init({
+    content_style : 'html:hover{cursor:text;}',
+        // plugins: "paste",
+        // paste_as_text: true,
+        selector: '#textBox',
+        menubar: false,
+//          skin: "oxide-dark",
+//      content_css: "dark",
+//        placeholder: "Please enter your text to Check Plagiarism...",
+        setup: function (editor) {
+            editor.on('change', function () {
+                editor.save();
+            });
+        },
+        height: 280, 
+        toolbar_mode:"wrap",
+        plugins: [
+            "lists insertdatetime nonbreaking pagebreak preview print searchreplace wordcount",
+            "searchreplace fullscreen",
+             "insertdatetime contextmenu paste"
+        ],
+        toolbar: " bold italic underline strikethrough undo redo formatselect fontselect fontsizeselect alignleft aligncenter alignright  bullist numlist fullscreen",
+        fontsize_formats: "8pt 10pt 12pt 14pt 18pt",
+        font_formats: "Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva",
+        branding: false,
+        mobile: {
+            menubar: false,
+            toolbar_mode:"wrap",
+            height: 750,
+        },
+        setup : function(ed) {
+            ed.on('init', function(e) {
+                $(".tox-toolbar__group button,.tox-split-button").css({
+                    "background": "white",
+                    "margin": "3px",
+                    "border": "1px solid #ddd"
+                });
+            });
+        }
+    });    
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+<style>
+    iframe body{
+        cursor:text;
+    }
+    .tool_heading {
+        color: #202020;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .main-toolarea{
+        min-height:570px;
+        width:100%;
+        padding: 10px 20px;
+        background:#fff;
+        border:1px solid #ccd6e2;
+    }
+    .p-0{padding:0px}
+    .pr-0{padding-right:0px !important}
+    .pl-0{padding-left:0px !important}
+    .br-right{border-right:0 !important}
+
+    .main-section-zone {
+        margin-bottom: 0px;
+        min-height:200px;
+        padding:0;
+        border-radius: 4px;
+        text-align:left;
+    }
+    .check-res-button{
+        background: #0373dd;
+        text-align: center;
+        padding: 12px 22px;
+        color: #fff;
+        font-size: 14px;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+        outline: 0!important;
+        display: inline-block;
+    }
+    .check-res-button:hover {
+        background: #202020;
+        text-decoration: none;
+        color: #fff;
+    }
+    .result_button{
+        border: 0px;
+        padding: 0px;
+        margin: 0px 10px 10px 0px;
+        outline: none;
+    }
+    .asSIMPLE , .asSIMPLE:hover , .asSIMPLE:focus {
+        float: right;
+        margin: 10px 0px;
+        display: inline-block;
+        color: #0373dd;
+        text-decoration: underline;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .custom_sett {
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        height: 40px;
+        padding: 5px 0px;
+    }
+    .custom_sett input {
+        width: 85%;
+        height: 28px;
+        padding: 0px 10px;
+        border: 0px;
+        outline: none;
+    }
+    .custom_sett span img , .custom_sett label img  {
+        border-right: 1px solid #dee2e6;
+        padding: 0px 15px;
+    }
+    .result_heading {
+        background: url("https://www.duplichecker.com/newassets1/images/result-bg.png") ; 
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 135px;
+        text-align: center;
+        color: #0373dd;
+        line-height: 135px;
+        margin: 20px 0;
+        font-size: 30px;
+    }
+    .Onresult-btn{
+        padding: 5px 18px;
+        border: 1px solid #ccd6e2;
+        background: #ffffff;
+        border-radius: 4px;
+        /* color: #2acf8e; */
+    }
+
+    #cke_text_editor a.cke_button{
+        /*background: #fff;*/
+        border: 1px solid #e5e5e5;
+        margin: 2px;
+        padding: 4px 5px;
+        cursor:pointer;
+    }
+    #cke_text_editor a.cke_button:hover{padding:4px 5px;}
+    #cke_text_editor .cke_button__source_label,#cke_text_editor .cke_button__sourcedialog_label{cursor:pointer;}
+    #cke_text_editor .cke_toolbar_separator{display:none;}
+    #cke_text_editor .cke_toolgroup a.cke_button:last-child:after,
+    #cke_text_editor .cke_toolgroup a.cke_button.cke_button_disabled:hover:last-child:after{border-right:none;}
+    #cke_text_editor .cke_combo{
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        top: 2px;
+    }
+    #cke_text_editor .cke_combo{margin-right:8px;}
+    #cke_text_editor .cke_combo:after{border-right:none;}
+    #cke_text_editor .cke_button__about,
+    #cke_text_editor .cke_button__language,
+    #cke_text_editor .cke_button__save,
+    #cke_text_editor .cke_button__exportpdf
+    {display:none;}
+    .cke_button.cke_button__copyformatting{display:none;}
+ 
+    @media(max-width:768px){
+        .check_active{margin-top: 40px;}
+        .main-button-box span {
+            padding: 7px 0px;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 49%;
+            margin:10px 0px 0px 0px;
+        }
+        .margin_media{margin:40px 0px 0px 0px !important;}
+        .main-toolarea{
+            padding:5px;
+        }
+    }
+    .main-toolarea{
+        position:relative;
+    }
+    .main-toolarea .loader_class{
+        position: relative;
+        min-height: 300px;
+        background: red;
+        z-index: 1;
+        width: 715px;
+    }
+    .main-toolarea .loader_class img{width:100%}
+    .ImagePreviewBox td {font-size:0px}
+    .all-input{
+        background: #fff;
+        padding: 5px 0px;
+        margin: 10px 0px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        position:relative
+    }
+    .all-input img{
+        background: #fff;
+        padding: 5px 10px;
+        display: inline-block;
+        border-right: 1px solid #e0e0e0;
+    }
+    .all-input input{
+        width: 85%;
+        border: 0;
+        color: #000;
+        outline: none;
+    }
+    .all-input input[type="url"]{
+        width: 65%;
+    }
+    .label_tag{
+        font-weight: 400;
+        font-size: 14px;
+        color: #757575;
+        margin: 0px 3px;
+        font-weight: 400;
+    }
+    .Content_fetch{
+        position: absolute;
+        right: 0px;
+        border: 0;
+        background: #0373dd; 
+        outline: none;
+        color: #fff;
+        padding: 2px 15px;
+        margin: 0px 5px;
+        border-radius: 4px;
+    }
+    #cke_39{
+        display:none
+    }
+    
+    .w40100m{width: 40%;}
+    .db{display: block!important;}
+    .outer-rating-stars{display:inline-block;font-weight:700;float:right;}
+    .rating-stars{display:inline-block;}
+    .outer-rating-stars .rating-stars span{
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        margin-right: 5px;
+        z-index: -1;
+    }
+    .outer-rating-stars .rating-stars{
+        background:#ebf1f8;
+        border-radius:100px;
+        padding:5px 10px;
+        color:#000;
+    }
+    .outer-rating-stars .rating_star{display:inline-block;margin:-5px 2px 0px 2px;}
+
+    .Removeborder{
+        border-right: 0 !important;
+    }
+    .list-box ul li{ 
+        position: relative;
+        list-style: none;
+        padding: 13px 20px;
+        font-size: 16px;
+        display: inline-block;
+        color: #000;
+            }
+        .listing-aligned{min-height:300px;padding:0;margin-top:20px}
+</style>
+
+
+<div class="container-fluid home_bg">
+
+<div class="container w768">
+ <div class="clearfix"></div>
+<div class="col-md-12 pn">
+<h1 class="color_fff content_tool_heading text-center fw600">Plagiarism Checker</h1></div>
+<div class="clearfix"></div>
+
+<div style="margin-bottom: 10px;"></div> <div class="clearfix"></div>
+<form onsubmit="document.getElementsByName('check')[0].disabled=true;" name="search_form" id="plagForm" method="post" enctype="multipart/form-data">
+<input type="hidden" name="_token" value="Iks8Dnw2GDh1r2mXWagR9pOjCkxSshcjFS8Wr55a">
+<input type="hidden" name="request_from" value="home_page">
+<input type="hidden" name="word_cc" id="word_cc" value="">
+
+<div class="col-md-12 ob px0">
+<div class="col-md-12">
+<textarea style="color:#ecf1f8;" name="org_submit" id="textBox" class="home_textarea_grey " placeholder="Please enter your text and press Check Plagiarism "></textarea>
+<textarea class="form-control hidden" id="hidden_input_field" name="text_source"></textarea>
+
+
+<div class="textarea_footer" style='    margin-top: 5px;'>
+<div class="counter_value hidden">1000 words limit per search | Total words: <span id="word-count">0</span></div>
+
+
+</div>
+</div>
+<div class="col-md-12">
+<div class="col-lg-6 col-xs-12 pn mt10">
+<form action="demo.php" method="post" enctype="multipart/form-data">
+<label class="label_heading text_break">Or Upload File (.tex, .txt, .doc, .docx, .odt, .pdf, .rtf):</label>
+<div class="input-group">
+<label class="input-group-btn mtext_c">
+<span class="file_btn text-center">
+<i class="fas fa-paperclip hidden-xl hidden-lg hidden-md hidden-sm"></i>
+<span class="choose">Choose File </span>
+<input type="file" id="fuResume" name="fuResume" style="display: none;" onchange="$('.pl_text1').attr('placeholder',this.files[0].name);" accept=".docx, .doc,.txt,.odt,.pdf,.rtf,.tex">
+</span>
+</label>
+<input type="text" placeholder="No File Chosen" class="form-control pl_text hidden-xs pl_text1" readonly="">
+</div>
+</form>
+</div>
+<div class="col-lg-6 col-xs-12 pn mt10">
+<label class="label_heading text_break">Check Plagiarism via Webpage URL</label>
+<div class="input-group">
+<input type="url" value="" placeholder="Enter URL" name="url_source" class="about_url form-control visible-xs check_url_m" onchange="    $('.check_url_c').val(    $(this).val());    $('#hidden_input_field').val('');">
+<label class="input-group-btn mtext_c">
+<span class="file_btn text-center hidden-xs">
+<span class="input-group-addon input_icon addurl_icon">
+<i class="glyphicon glyphicon-link"></i>
+</span>
+</span>
+</label>
+<input type="url" value="" placeholder="Enter URL" name="url_source" class="form-control pl_text hidden-xs check_url_c" onchange="    $('.check_url_m').val(    $(this).val());    $('#hidden_input_field').val('');">
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<style>.ion2asdfsdf{min-height:113px}</style>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<div class="text-center">
+<div class="g-recaptcha d_ib" data-sitekey="6LdrqGwlAAAAAF2896cSd7Lb1L5L3oTFvMgC3Yru"></div>
+</div>
+<form action="result.html" method="get" enctype="multipart/form-data">
+<div class="col-md-12 text-center">
+<input  type="submit" name="check" value="Check Plagiarism" class="check_res_button g-recaptchaa" data-sitekey="6LdrqGwlAAAAAF2896cSd7Lb1L5L3oTFvMgC3Yru">
+
+</div>
+</form>
+<div class="clearfix"></div>
+<div class="mt5"></div>
+ <div class="clearfix"></div>
+</div>
+<div style="display:none" class="login-error-msg1" id="error_msg"></div>
+<div style="display:none" id="success_msg" class="success-text-msg1"></div>
+<div class="clearfix"></div>
+<br>
+</form>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="clearfix"></div><div style="display:none;" class="dupli_loader vd3323" id="loading_img"> <img class="actuall_loader" alt="https://www.duplichecker.com/assets/images/progressbar.gif" width="300" height="300" src="https://www.duplichecker.com/asets/images/progressbar.gif"> <span id="loading_tool_name"></span></div>
+
+
+
+<script>function copy() {let textarea = document.getElementById("textarea");textarea.select();document.execCommand("copy");}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script>
+var head = document.getElementsByTagName('head')[0];
+var giftofspeed = document.createElement('script');
+giftofspeed.src = "https://www.duplichecker.com/newassets1/js/bootstrap.min.js";
+var godefer = document.getElementsByTagName('link')[0];
+godefer.parentNode.insertBefore(giftofspeed, godefer);
+</script>
+<script async>$(document).ready(function(){
+function yt(){
+    var t= new RegExp(location.host);
+    $("a").each(function(){
+        if( !t.test($(this).attr("href")) )
+        {
+           
+            const fruits = [
+                "https://www.facebook.com/duplichecker", 
+                "https://twitter.com/duplichecker", 
+                "https://www.pinterest.com/duplichecker/", 
+                "https://www.youtube.com/user/duplichecker1",
+                "#classinfheading",
+                "https://images.google.com/"
+            ];
+            if(fruits.includes($(this).attr("href"))){
+                
+            }else{
+                $(this).addClass("external");
+                $(this).attr("rel", "nofollow noopener");
+            }
+
+
+        }
+    })
+}
+
+yt();
+
+setTimeout(function () {
+yt()
+}, 3e3)
+
+});
+function PushClickValue(value){
+    //console.log(value);
+    dataLayer.push({'event': 'clickValue','clickValue': value});
+}
+</script>
+<script src="https://www.duplichecker.com/assets/js/common.js"></script>
+<script src="https://www.duplichecker.com/a6c2/tkkk.js"></script>
+<script async>
+
+    
+    setTimeout(function(){
+                        if ($(".g-recaptcha")[0]){
+                    var head = document.getElementsByTagName('head')[0];
+                    var giftofspeed = document.createElement('script');
+                    giftofspeed.src = "https://www.google.com/recaptcha/api.js";
+                    var godefer = document.getElementsByTagName('link')[0];
+                    godefer.parentNode.insertBefore(giftofspeed, godefer);
+                }
+                
+            //var consent_script = '';
+            //$('head').append(consent_script);
+                    $('head').append('<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement(\'script\'); s.src = \'//cdn.adpushup.com/41249/adpushup.js\'; s.type = \'text/javascript\'; s.async = true; (d.getElementsByTagName(\'head\')[0] || d.getElementsByTagName(\'body\')[0]).appendChild(s); })(window, document);<\/script>');
+            $('head').append('<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement("script"); s.src = "//delivery.adrecover.com/42433/adRecover.js"; s.type = "text/javascript"; s.async = true; (d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0]).appendChild(s); })(window, document);<\/script>');
+                $('head').append("<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https:\/\/www.googletagmanager.com\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TFC65WT');<\/script>");
+        
+        fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+        .then(function (data, textStatus, jqXHR) {
+            if(data==""){
+                bb();
+               
+            }else{
+                //ajo_thokdo()
+               
+            }
+        })
+        .catch((error) => {
+            bb();
+           
+        });
+        fetch('https://cdn.adpushup.com/41249/adpushup.js')
+        .catch(() => bb());
+        fetch('//delivery.adrecover.com/42433/adRecover.js')
+        .catch(() => bb());
+        fetch('https://www.googletagmanager.com/gtag/js?id=G-YR5XYQT3VK')
+        .catch(() => bb());
+        var img_grammayly= new Image();
+        img_grammayly.src = 'https://delivery.adrecover.com/allow.jpg';
+        img_grammayly.onload = function(){
+        };
+        img_grammayly.onerror = function(){
+                bb()
+        };
+        var img_grammayly= new Image();
+        img_grammayly.src = '//www.duplichecker.com/asets/img/subscribe.jpg';
+        img_grammayly.onload = function(){
+        };
+        img_grammayly.onerror = function(){
+           
+            bb()
+        };
+
+    },1000);  
+    
+    function ajo_thokdo(){
+        var dupli_home_top = '';
+        (dupli_home_top)?$('.sdfewre').append(dupli_home_top):'';
+
+        var dupli_home_after_title = '';
+        (dupli_home_after_title)?$('.vbv').append(dupli_home_after_title):'';
+
+        var dupli_home_before_button = '';
+        (dupli_home_before_button)?$('.b21sd3').append(dupli_home_before_button):'';
+
+        var dupli_home_after_button = '';
+        (dupli_home_after_button)?$('.fdsvccd .span_1').append(dupli_home_after_button):'';
+        
+        var dupli_home_after_button_2 = '';
+        (dupli_home_after_button_2)?$('.dcsfdf .span_2').append(dupli_home_after_button_2):'';
+
+        var searchbar_tools = '';
+        (searchbar_tools)?$('.st_dd').append(searchbar_tools):'';
+
+        var dupli_side_bar1 = '';
+        if(dupli_side_bar1==null){
+
+        }else{
+            $('.vfklmd5dsf').append(dupli_side_bar1);
+        }
+
+        var dupli_side_bar2 = '';
+        if(dupli_side_bar2==null){
+
+        }else{
+            $('.mckwn').append(dupli_side_bar2);
+        }
+
+        var dupli_inner_tool_after_title = '';
+        (dupli_inner_tool_after_title)?$('.csdcvds').append(dupli_inner_tool_after_title):'';
+
+        var dupli_inner_tool_before_button = '';
+        (dupli_inner_tool_before_button)?$('.scxv').append(dupli_inner_tool_before_button):'';
+
+        var dupli_inner_tool_after_button = '';
+        (dupli_inner_tool_after_button)?$('.erb .span_1').append(dupli_inner_tool_after_button):'';
+        
+        var dupli_inner_tool_after_button_2 = '';
+        (dupli_inner_tool_after_button_2)?$('.gfd .span_2').append(dupli_inner_tool_after_button_2):'';
+
+        var dupli_inner_tool_top = '';
+        (dupli_inner_tool_top)?$('.nvb').append(dupli_inner_tool_top):'';
+    }
+    
+    
+    function bb() {
+        dataLayer.push({'event': 'clickValue','clickValue': "grammly"});
+        $("#img0, #img1").css('display','inline-block');
+        
+                        
+                    var homepage_grmly  = '<div class="NgAeRaaW-b-fsd" style="margin:20px 0; border-bottom:0;">'+
+                    '<a target="_blank" class="set-anchor" href="https://www.grammarly.com/?q=grammar&utm_source=placement&utm_medium=cpc&utm_content=72890_3&utm_term=duplichecker" rel="noopener noreferrer nofollow">'+
+                     '   <div class="inner-disection" style="">'+
+                      '      <div class=" col-6 col-sm-12 col-xs-6 col-md-2 logo-section">'+
+                       '         <img src="https://www.duplichecker.com/asets/img/logo.svg">'+
+                        '    </div>'+
+                         '   <div class="col-6 col-sm-12 col-xs-12 col-md-8 list-section">'+
+                          '      <p>Eliminate grammar, spelling & punctuation errors forever!</p>'+
+                           '     <img src="https://www.duplichecker.com/asets/img/illustration.svg" style="">'+
+                            '</div>'+
+                            '<div class="col-6 col-sm-12 col-xs-6 col-md-2 try-Noew">'+
+                             '   <div class="innertryNOew">'+
+                              '      <span>Try Now</span>'+
+                               '     <img src="https://www.duplichecker.com/asets/img/go-arrow.svg">'+
+                                '</div>'+
+                    '        </div>'+
+                     '   </div>'+
+                   ' </a>'+
+                '</div>  ';
+        var andartool_grmly  = '<div class="NgAeRaaW-b-fsd" style="margin:20px 0; border-bottom:0;border: 1px solid #110f0f1f;">'+
+                    '<a target="_blank" class="set-anchor" href="https://www.grammarly.com/?q=grammar&utm_source=placement&utm_medium=cpc&utm_content=72890_3&utm_term=duplichecker" rel="noopener noreferrer nofollow">'+
+                     '   <div class="" style="padding: 10px;background: #ebf1f8;">'+
+                      '      <div class="  col-6 col-sm-12 col-xs-6 col-md-3 logo-section">'+
+                       '         <img src="https://www.duplichecker.com/asets/img/logo.svg">'+
+                        '    </div>'+
+                         '   <div class="col-6 col-sm-12 col-xs-12 col-md-6 list-section">'+
+                          '      <p>Eliminate grammar, spelling & punctuation errors forever!</p>'+
+                            '</div>'+
+                            '<div class="col-6 col-sm-12 col-xs-6 col-md-3 try-Noew">'+
+                             '   <div class="innertryNOew">'+
+                              '      <span>Try Now</span>'+
+                               '     <img src="https://www.duplichecker.com/asets/img/go-arrow.svg">'+
+                                '</div>'+
+                    '        </div>'+
+                     '   </div>'+
+                   ' </a>'+
+                '</div>  ';
+        
+        //console.log(homepage_grmly);
+        //$("#img2").html(homepage_grmly);
+       // alert(homepage_grmly);
+       // $("#img2").css('display','inline');
+        $(".b21sd3 span:first").html(homepage_grmly);
+        $(".b21sd3 span:first").css('display','inline');
+        
+        $(".img2").html(homepage_grmly);
+        $(".img2").css('height','70px');
+
+        var dupli_inner_tool_after_button = '';
+        (dupli_inner_tool_after_button)?$('.erb .span_1').append(dupli_inner_tool_after_button):'';
+               
+        var dupli_home_after_button = '';
+        (dupli_home_after_button)?$('.fdsvccd .span_1').append(dupli_home_after_button):'';
+        
+            
+        $("#img4, #img5, #img6, #img7").css('display','inline-block');
+        
+        
+        $(".scxv span:first").html(andartool_grmly);
+        $(".scxv span:first").css('display','inline');
+
+        
+        
+        
+        var grmly_slider = '<a href="https://www.grammarly.com/?q=grammar&utm_source=placement&utm_medium=cpc&utm_content=72890_3&utm_term=duplichecker" target="blank" rel="nofollow"><div class="csslider1 autoplay cs_handle">'+
+                        '<input name="cs_anchor1" id="cs_slide1_0" type="radio" class="cs_anchor slide" />'+
+                        '<input name="cs_anchor1" id="cs_slide1_1" type="radio" class="cs_anchor slide" />'+
+                        '<input name="cs_anchor1" id="cs_slide1_2" type="radio" class="cs_anchor slide" />'+
+                        '<input name="cs_anchor1" id="cs_play1" type="radio" class="cs_anchor" checked="" />'+
+                        '<input name="cs_anchor1" id="cs_pause1_0" type="radio" class="cs_anchor pause" />'+
+                        '<input name="cs_anchor1" id="cs_pause1_1" type="radio" class="cs_anchor pause" />'+
+                        '<input name="cs_anchor1" id="cs_pause1_2" type="radio" class="cs_anchor pause" />'+
+                        '<div class="logo-ads">'+
+                            '<span class="titopati"></span>'+
+                            '<img src="https://www.duplichecker.com/asets/img/logo.svg">'+
+                        '</div>'+
+                        '<ul>'+
+                            '<li class="num0" style="width:100%;height:70px;padding: 20px; margin-top:20px;">'+
+                                '<p style="font-weight:700;font-size:16px;">Ensure your writing is mistake - free and polish</p>'+
+                            '</li>'+
+                            '<li class="num1" style="width:100%;height:70px;padding: 20px; margin-top:20px;">'+
+                                '<p style="font-weight:700;font-size:16px;">Grammatical Errors</p>'+
+                            '</li>'+
+                            '<li class="num2" style="width:100%;height:70px;padding: 20px; margin-top:20px;">'+
+                                '<p style="font-weight:700;font-size:16px;">Brilliant Writing Awaits</p>'+
+                            '</li>'+
+                        '</ul>'+
+                        '<div class="cs_bullets">'+
+                            '<span class="titopati"></span>'+
+                            '<label class="num0" for="cs_slide1_0">'+
+                                '<span class="cs_point"></span>'+
+                            '</label>'+
+                            '<label class="num1" for="cs_slide1_1">'+
+                                '<span class="cs_point"></span>'+
+                            '</label>'+
+                            '<label class="num2" for="cs_slide1_2">'+
+                                '<span class="cs_point"></span>'+
+                            '</label>  '+
+                        '</div>'+
+                    '</div>'+
+                    '<span class="ads-pricing">Try Now</span></a>';
+        grmly_slider = '';
+        $('#img5').html(grmly_slider);
+        $('#img4').html(grmly_slider);
+        $('#img6').html(grmly_slider);
+        $('#img7').html(grmly_slider);
+        $('#btnbtnn').html('');
+        $('#btnbtnn').html(grmly_slider);
+        // $('#img4').css('background','white');
+        $(".csdcvds span").css('display','inline-block');
+    
+    
+      //  $('.fdsvccd').html(grmly_slider);
+        
+    //    $('.erb').html(grmly_slider);
+    //    
+        
+        $(".vc spannndx").css('display','inline-block');
+        $(".sdflk435 span").css('display','inline-block');
+        
+        $(".sdflk435 span").html(grmly_slider);
+        
+        $(".adsbygoogle").each(function(){$(this).remove();$(".dfdfdf").remove();});
+    }
+var ad_c = 0;
+const myTimeout = setInterval(myGreeting, 3000); 
+function myGreeting() {
+    var checkvarr = $('.adsbygoogle[data-ad-status="unfilled"]');
+    
+    if(( ($('.adsbygoogle[data-ad-slot="7414259464"]').attr('data-ad-status')=="filled") || ($('.adsbygoogle[data-ad-slot="1542129455"]').attr('data-ad-status')=="filled") )  && ($('.adsbygoogle[data-ad-slot="4840051107"]').attr('data-ad-status')=="unfilled")){
+        var oper_wali_ad_html = $("#home_top").html();
+        $("#home_before_buton").html('');
+        $("#home_before_buton").html(oper_wali_ad_html);
+        //console.log("first case");
+    }
+    else if(( ($('.adsbygoogle[data-ad-slot="4840051107"]').attr('data-ad-status')=="filled") || ($('.adsbygoogle[data-ad-slot="7915966119"]').attr('data-ad-status')=="filled")  )  && ($('.adsbygoogle[data-ad-slot="7414259464"]').attr('data-ad-status')=="unfilled")){
+        var nechy_wali_ad_html = $("#home_before_buton").html();
+        $("#home_top").html('');
+        $("#home_top").html(nechy_wali_ad_html);
+        //console.log("second case");
+    }
+    else{
+        
+    
+      //  console.log(ad_c+ " case");
+    
+        checkvarr.each(function(item,val){
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '7414259464'){
+                  // console.log("home_top");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559" crossorigin="anonymous"><\/script> <!-- 728-90-Top-ad-uf --> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3005749278400559" data-ad-slot="1542129455"><\/ins> <script>  (adsbygoogle = window.adsbygoogle || []).push({}); <\/script>';
+                   $('#home_top').html(home_top);
+               }
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '1542129455'){
+                  // console.log("home_top fresh");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559"      crossorigin="anonymous"><\/script> <!-- BT-728-90-Duplichecker --> <ins class="adsbygoogle"      style="display:inline-block;width:728px;height:90px"      data-ad-client="ca-pub-3005749278400559"      data-ad-slot="7414259464"><\/ins><script>     (adsbygoogle = window.adsbygoogle || []).push({});<\/script>';
+                   $('#home_top').html(home_top);
+               }
+
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '9848851116'){
+                 //  console.log("home_after_title");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559"      crossorigin="anonymous"><\/script> <!-- After Title - alternate --> <ins class="adsbygoogle"      style="display:inline-block;width:336px;height:280px"      data-ad-client="ca-pub-3005749278400559"      data-ad-slot="3214018367"><\/ins> <script>      (adsbygoogle = window.adsbygoogle || []).push({}); <\/script>';
+                   $('#home_after_title').html(home_top);
+               }
+
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '3214018367'){
+                  // console.log("home_after_title fresh");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559"     crossorigin="anonymous"><\/script> <!-- AT-336-280-Dupli --> <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-3005749278400559"   data-ad-slot="9848851116"><\/ins> <script> (adsbygoogle = window.adsbygoogle || []).push({});  <\/script>';
+                   $('#home_after_title').html(home_top);
+               }
+
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '4840051107'){
+                 //  console.log("home_before_buton");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559" crossorigin="anonymous"><\/script> <!-- Before-button-Alternate --> <ins class="adsbygoogle"      style="display:inline-block;width:728px;height:90px"      data-ad-client="ca-pub-3005749278400559"      data-ad-slot="7915966119"><\/ins><script>     (adsbygoogle = window.adsbygoogle || []).push({});<\/script>';
+                   $('#home_before_buton').html(home_top);
+               }
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '7915966119'){
+                 //  console.log("home_before_buton fresh");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559" crossorigin="anonymous"><\/script> <!-- BB-728-90-Duplichecker --> <ins class="adsbygoogle"       style="display:inline-block;width:728px;height:90px"      data-ad-client="ca-pub-3005749278400559"      data-ad-slot="4840051107"><\/ins> <script>      (adsbygoogle = window.adsbygoogle || []).push({}); <\/script>';
+                   $('#home_before_buton').html(home_top);
+               }
+
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '1342555577'){
+                  // console.log("side_bar2");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559" crossorigin="anonymous"><\/script> <!-- sidebar 2- alternate --> <ins class="adsbygoogle"      style="display:block"  data-ad-client="ca-pub-3005749278400559"  data-ad-slot="1860843590" data-ad-format="auto" data-full-width-responsive="true"><\/ins>  <script>      (adsbygoogle = window.adsbygoogle || []).push({}); <\/script>';
+                   $('#side_bar2').html(home_top);
+               }
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '1860843590'){
+              //     console.log("side_bar2 fresh");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559" crossorigin="anonymous"><\/script> <!-- S2-336-280-Duplichecker-Desktop --> <ins class="adsbygoogle"      style="display:inline-block;width:300px;height:250px"      data-ad-client="ca-pub-3005749278400559"      data-ad-slot="1342555577"><\/ins>  <script>      (adsbygoogle = window.adsbygoogle || []).push({}); <\/script>';
+                   $('#side_bar2').html(home_top);
+               }
+
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '8204581048'){
+                //   console.log("side_bar3");
+                   var home_top=' <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559" crossorigin="anonymous"><\/script> <!-- 300-250-s3-alternate --> <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-3005749278400559" data-ad-slot="7365016369"><\/ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); <\/script>    ';
+                   $('#side_bar3').html(home_top);
+               }
+               if($(this).attr('data-ad-status') == 'unfilled' && $(this).attr('data-ad-slot') == '7365016369'){
+                 //  console.log("side_bar3 fresh");
+                   var home_top='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3005749278400559" crossorigin="anonymous"><\/script> <!-- S3-300-250-Duplichecker-Desktop --> <ins class="adsbygoogle"  style="display:inline-block;width:300px;height:250px"  data-ad-client="ca-pub-3005749278400559" data-ad-slot="8204581048"><\/ins> <script>  (adsbygoogle = window.adsbygoogle || []).push({}); <\/script>';
+                   $('#side_bar3').html(home_top);
+               }
+
+       });
+    }
+    if(ad_c>=10){
+     clearInterval(myTimeout);
+    }
+   
+ad_c++;
+}
+$("#closePopupss").click(function(e){
+    e.preventDefault();
+    $("#bio_ep_close").click();
+});
+var SITE_URL = "https://www.duplichecker.com/";
+
+    $('#ser_icon').click(function(){ 
+        if($('.main_ser_feild').css("display")=="block"){
+
+            $('.main_ser_feild').css("display","none");
+
+        }else{
+            $('.main_ser_feild').css("display","block");
+        }
+        //alert("dd");
+        
+        //$('.main_ser_feild').slideToggle()
+       
+    });
+
+
+$('a[href="'+document.URL+'"]').closest('li').addClass('active');
+function checkCookie(){
+    if(""!=getCookie("dupli_cookies")){
+        if (typeof gmly_pu === "function") {
+            gmly_pu();
+        }
+    }else{
+        $("#cookie_directive_container").show();
+    }
+}
+$(window).on('load',function(){
+    $(this).width()<767?($("#accordion .panel-collapse").removeClass("in"),$("#accordion .panel-collapse").addClass("out")):($("#accordion .panel-collapse").removeClass("out"),$("#accordion .panel-collapse").addClass("in"));
+    checkCookie();
+});
+    function gmly_pu(){
+        var img = "popup"+Math.floor((Math.random() * 4) + 1);
+              img = 'popup2';
+       full_img = img ;
+//       console.log(full_img);
+       //full_img = img + '.png';
+       full_img = ''+full_img+".png" ;
+        //console.log(full_img);
+        img_html = '<div class=""><div class="grammerly-bioShow"><div class="heading-pop"><div class="heading-pop-texting"><p><span class="EliminateGrammar">Eliminate <strong>grammar</strong>, <strong>spelling</strong> & <strong>Punctuation</strong> errors forever!</span><br><span class="Grammarlyhelps">Grammarly helps you make sure that Your writing flawless and effective.</span></p></div><img src="https://www.duplichecker.com/asets/img/ondestopLogo.svg"></div><div class="grammarlyButtons"><div class="grammarlyYes"><span class="yes"><strong>YES</strong></span><span class="yes">Get the FREE Writing tool now.</span></div><div class="grammarlyno"><span class="no"><strong>NO</strong></span><span class="no">I don\'t mind making writing errors.</span></div></div></div></div>';
+       // console.log(img_html);
+       bioEp.init({
+           width: 800,
+           height: 514,
+           html: '<div class="removeBio" onclick="closeed();"></div><a href="https://www.grammarly.com/?q=grammar&utm_source=placement&utm_medium=cpc&utm_content=72890_3&utm_term=duplichecker" title="For more" target="_blank">'+img_html+'</a>',
+           cookieExp: 1
+       });
+    }
+    function closeed(){
+        $("#bio_ep_close").click();
+    }
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-34544999-1']);
+_gaq.push(['_trackPageview']);
+(function () {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+jQuery(function ($) {
+$("#top_search_bar").keyup(function(){
+showResults();
+});
+function showResults() {
+var val = $("#top_search_bar").val();
+$(".search_drop_box").hide();
+if(val.length < 3){
+$(".search_box_options").addClass('hidden');
+return false;
+}
+var ajax_url_search = "https://www.duplichecker.com/search";
+$.post( ajax_url_search, { keyword: val, _token: "Iks8Dnw2GDh1r2mXWagR9pOjCkxSshcjFS8Wr55a" }, function( result ) {
+$(".search_box_options").removeClass('hidden');
+$(".search_box_options").html("<ul></ul>");
+if(result == ''){
+$(".search_box_options ul").append('<li>No result found related to your keyword..</li>');
+}else{
+$.each(result, function(i, item) {
+html_rzlt = item.html_rzlt;
+$(".search_box_options ul").append(html_rzlt);
+});
+}
+});
+$(".search_drop_box").show();
+}
+})
+function csfdf(){
+$('.lazy').each(function(img){
+var scrollTop = window.pageYOffset;
+var this_offset=$(this).offset().top + $(this).outerHeight();
+var window_offset=$(window).scrollTop()+ $(window).height();
+if($(this).offset().top + $(this).outerHeight() <= ($(window).scrollTop()+ $(window).height())){
+var path_src=$(this).attr('data-name');
+var split_data=path_src.split('|');
+var img_html='<picture>'+
+'<source srcset="'+split_data[0]+'.webp" type="image/webp">'+
+'<source srcset="'+split_data[0]+split_data[1]+'" type="image/'+split_data[1].replace('.','')+'">'+
+'<img src="'+split_data[0]+split_data[1]+'" alt="'+split_data[2]+'" class="'+split_data[3]+'">'+
+'</picture>';
+$(this).html(img_html);
+$(this).show(1000);
+$(this).removeClass('lazy');
+}
+});
+}
+$(window).on('resize scroll mousemove', function(){ csfdf();});
+    </script>
+
+
+<script type="text/javascript">
+    $('.rating-stars').click(function(){
+        $('#myBtn').click();
+    });
+</script>
+<script>
+    var is_pass = false;
+</script><script>
+     var ajax_url_externalfile_url = "https://www.duplichecker.com/read_file";
+    var ajax_token = "Iks8Dnw2GDh1r2mXWagR9pOjCkxSshcjFS8Wr55a";
+</script>
+<script src="https://www.duplichecker.com/js/home.js?v=mohsin"></script>
+<script>
+
+    function beforeSend(){$("#loading_img").show(),$("#loading_tool_name").html("Uploading File . . .")}
+</script>
+</body>
+</html>
